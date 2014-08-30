@@ -9,4 +9,5 @@ alanning:roles
 iron:router
 accounts-password
 accounts-ui
-accounts-facebook
+insecure
+

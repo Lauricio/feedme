@@ -1,0 +1,5 @@
+Meteor.subscribe('days')
+Meteor.subscribe('attending')
+Meteor.subscribe('meals')
+Meteor.subscribe('dishes')
+Meteor.subscribe('users')

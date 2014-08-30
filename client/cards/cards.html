@@ -5,7 +5,9 @@
       <button class="navigation icn-chevron-right" id="dayForward"></button>
     </div>
     <div class="card-list">
-      {{> cardsList}}
+      {{#each dayCards}}
+        {{> cardsList}}
+      {{/each}}
     </div>
 </template>
 
@@ -17,10 +19,14 @@
       <button class="control XXXbgColor-breakfastAlt icn-plus"></button>
     </div>
     <div class="dishes-list">
-      {{> dishes}}
+      {{#each dishes}}
+        {{> dishes}}
+      {{/each}}  
     </div>
     <div class="user-list">
-      {{> users}}
+      {{#each whoIsEating}}
+        {{> users}}
+      {{/each}}
     </div>
   </div>
   

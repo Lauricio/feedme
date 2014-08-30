@@ -1,10 +1,55 @@
 <template name="users">
-  {{> userItem}}
-  {{> userItem2}}
-  {{> userItem3}}
+  {{#if itIsMe}}
+    {{> userItemPersonal}}
+  {{else}}
+    {{> userItem}}
+  {{/if}}
+
+
+  {{! > userItem2}}
+  {{! > userItem3}}
 </template>
 
 <template name="userItem">
+    <div class="user-list-item">
+        <img src="https://pbs.twimg.com/profile_images/450916693217267712/fM5IQDNh.jpeg" class="picture">
+      {{#if picture}}
+      {{else}}
+  <!--       <div class="picture">
+          <span class="placeholder icn-user"></span>
+        </div> -->
+      {{/if}}
+
+      <div class="details">
+        {{#each myMeals}}
+          <img src="{{dishPicture}}" class="thumbnail {{#unless eating}} is-disabled {{/unless}}">
+        {{/each}}
+      </div>
+    </div>
+
+</template>
+
+<template name="userItemPersonal">
+    <div class="user-list-item">
+          <div class="picture">
+            <span class="placeholder icn-close"></span>
+          </div>
+      {{#if picture}}
+      {{else}}
+  <!--       <div class="picture">
+          <span class="placeholder icn-user"></span>
+        </div> -->
+      {{/if}}
+      
+      <div class="details">
+        {{#each myMeals}}
+          <img src="{{dishPicture}}" class="thumbnail {{#if eating}} js-disableEat {{else}} js-enableEat is-disabled {{/if}}">
+        {{/each}}
+      </div>
+    </div>
+</template>
+
+<template name="XXXuserItem">
   <div class="user-list-item">
       <img src="https://pbs.twimg.com/profile_images/458693304410857472/WyPbgi45_400x400.jpeg" class="picture">
     {{#if picture}}
