@@ -4,20 +4,24 @@
 </template>
 
 <template name="dishItem">
+  {{#with dish}}
   <div class="dish-item">
-    <img class="illustration" src="http://imgur.com/WDgcp6h.jpg" alt="">
+    <img class="illustration" src="{{picture}}" alt="">
       <button class="ing-control icn-grid js-openGrid"></button>
     <div class="meta">
       <div class="info">
-        <h4 class="title top">Tom Yam</h4>
-        <h4 class="title">ต้มยำ</h4>
+        <h4 class="title top">{{englishName}}</h4>
+        <h4 class="title">{{thaiName}}</h4>
       </div>
       <div class="labels">
-        <div class="ing-label icn-fish"></div>
+        {{#each mealOptions}}
+        <div class="ing-label icn-{{this}}"></div>
+        {{/each}}
       </div>
     </div>
     <button class="remove-control icn-minus"></button>
   </div>
+  {{/with}}
 </template>
 
 <template name="dishItem2">
