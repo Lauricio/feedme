@@ -1,0 +1,32 @@
+@import "../spark.import.less";
+
+.top-menu {
+  height: 44px;
+  background-color: @menu;
+  display: flex;
+  justify-content: space-between;
+
+  &.in-webview-ios {
+    box-sizing: content-box;
+    padding-top: 20px;
+  }
+
+
+  .control {
+    &:extend(.unstyled-button);
+    color: @light-heading;
+    padding: 0 .7em;
+    font-size: 1.5em;
+  }
+
+  .dropdown {
+    &:extend(.unstyled-button);
+    background-color: lighten(@menu, 10%);
+    color: white;
+    text-align: center;
+    font-size: 1.1em;
+    padding: 0 1em;
+    margin: .4em 0;
+    border-radius: 1em;
+  }
+}

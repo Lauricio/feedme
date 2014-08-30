@@ -1,0 +1,61 @@
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+.unstyled-button {
+    padding: 0;
+    border: 0;
+    outline: none;
+    background-color: inherit;
+}
+
+.unstyled-link {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: inherit;
+  &:active, &:focus {
+    outline: none; }
+}
+
+.base-icon {
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  // line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.spark-icon {
+  &:extend(.base-icon);
+  font-family: 'spark';
+}
+
+.overlay-base {
+  position: absolute;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  background: rgba(94, 90, 89, 0.6);
+  transition: opacity 0.5s;
+}
+
+
+.addIcon(@icon-name) {
+    &:before {
+      content: @@icon-name;
+    }
+}
+
+
+

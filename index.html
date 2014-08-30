@@ -1,0 +1,25 @@
+<head>
+  <title>feedme.</title>
+   <meta name="viewport" content="minimal-ui, width=device-width,  initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=no">
+   <meta name="description" content="">
+   <meta name="HandheldFriendly" content="True">
+   <meta name="MobileOptimized" content="320">
+   <meta http-equiv="cleartype" content="on">
+   <!-- <meta name="apple-itunes-app" content="app-id=762587086"> -->
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="">
+</head>
+
+<body>
+  {{> layout}}
+</body>
+
+<template name="layout">
+  {{> menu}}
+  <div class="app-content">
+    {{> cards}}
+    
+  </div>
+</template>

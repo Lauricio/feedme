@@ -1,0 +1,120 @@
+@import "../spark.import.less";
+
+.dish-item {
+  width: 100%;
+  // height: 200px;
+  background-color: @asbestos;
+  border: .2rem solid white;
+  // background: url(http://imgur.com/WDgcp6h.jpg) no-repeat top left;
+  // background-size: 100%;
+  position: relative;
+
+  .illustration {
+    width: 100%;
+    height: 100%;
+  }
+
+  .ing-control {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    &:extend(.unstyled-button);
+    background-color: @menu;
+    color: white;
+    // padding: 1rem 1.3rem;
+    font-size: 2.2em;
+    padding: 0 .2em;
+  }
+
+  .meta {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    padding: .7rem 1rem;
+    background-color: @menu;
+    color: white;
+    text-align: center;
+    // border-radius: 5px;
+    display: flex;
+
+    .title {
+      font-size: 1em;
+      // line-height: 1.5em;
+      margin: 0;
+      // padding: 0 .5em;
+
+      &.top {
+        margin-bottom: .3rem;
+        // border-bottom: 1px solid @light-heading;
+      }
+    }
+
+    .labels {
+      margin-left: 1em;
+    }
+
+    .ing-label {
+      background-color: @menu;
+      color: white;
+      font-size: 1.5em;
+      padding: 0 .2em;
+    }
+  }
+
+  .remove-control {
+    &:extend(.unstyled-button);
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: white;
+    padding: 1rem 1.3rem;
+    background-color: @pomegranate;
+    background-color: @menu;
+  }
+}
+
+.ingredients-overlay {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  background-color: rgba(red(@menu), green(@menu), blue(@menu), .95);
+  // background-color: @background;
+  margin: 0 3rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 1em;
+  box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.45);
+  border-radius: 10px;
+
+  transform: scale(0.7);
+  transform: translate3d(0, -200%, 0);
+  opacity: 0;
+  transition: all 0.3s;
+
+  &.is-open {
+    transform: translate3d(0, 0, 0);
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .add-control {
+    &:extend(.unstyled-button);
+    background-color: lighten(@menu, 10%);
+    background-color: @menu;
+    border: 2px solid @light-heading;
+    color: lighten(@light-heading, 5%);
+    // padding: 1rem 1.3rem;
+    font-size: 3em;
+    padding: 0 .2em;
+    margin: .3em;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+
+
+  }
+
+
+}

@@ -1,0 +1,27 @@
+<template name="cards">
+    <div class="cards-header no-drag">
+      <button class="navigation icn-chevron-left" id="dayBack"></button>
+      <button class="control" id="selectDate">Tuesday, May 14</button>
+      <button class="navigation icn-chevron-right" id="dayForward"></button>
+    </div>
+    <div class="card-list">
+      {{> cardsList}}
+    </div>
+</template>
+
+<template name="cardsList">
+
+  <div class="card-list-item">
+    <div class="header XXXbgColor-breakfast">
+      <div class="title">10:00</div>
+      <button class="control XXXbgColor-breakfastAlt icn-plus"></button>
+    </div>
+    <div class="dishes-list">
+      {{> dishes}}
+    </div>
+    <div class="user-list">
+      {{> users}}
+    </div>
+  </div>
+  
+</template>

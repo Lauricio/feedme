@@ -1,0 +1,72 @@
+@import "../spark.import.less";
+
+.cards-header {
+  display: flex;
+  justify-content: space-around;
+  padding: .6rem;
+  background-color: @item-background;
+  border-bottom: 1px solid darken(@item-background, 10%);
+
+  .control {
+    &:extend(.unstyled-button);
+    background-color: @asbestos;
+    color: white;
+    text-align: center;
+    font-size: 1.1em;
+    padding: .3em 1em;
+    border-radius: 1em;
+  }
+
+  .navigation {
+    &:extend(.unstyled-button);
+    background-color: @item-background;
+    color: @asbestos;
+    font-size: 1.1em;
+    padding: .3em 1em;
+  }
+}
+
+.card-list {
+  border: 2px solid @menu;
+  border-top: none;
+}
+
+
+.card-list-item {
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    background-color: @menu;
+
+    .title {
+      color: white;
+      font-size: 1.5em;
+      padding: .8rem 1rem;
+    }
+
+    .control {
+      &:extend(.unstyled-button);
+      background-color: @menu;
+      color: white;
+      padding: .8rem 2rem;
+    }
+
+  }
+
+  .dishes-list {
+    // border: 2px solid @concrete;
+    // border-top: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

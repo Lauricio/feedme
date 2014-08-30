@@ -1,0 +1,48 @@
+@import "../spark.import.less";
+
+
+.user-list-item {
+  font-size: 18px;
+  background-color: @menu;
+  display: flex;
+  border: .2rem solid white;
+
+  .picture {
+    height: 3.4em;
+    width: 3.4em;
+    flex: 0 0 3.4em;
+
+    /* For placeholder */
+    display: flex;
+    background-color: @orange;
+  }
+
+  .placeholder {
+    color: white;
+    font-size: 1.8em;
+    margin: auto;
+  }
+
+  .details {
+    flex: 1;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-left: .5em;
+  }
+
+  .thumbnail {
+    height: 2.5em;
+    width: 2.5em;
+    flex: 0 0 2.5em;
+    border-radius: 50%;
+    border: 2px solid @light-heading;
+    border: 2px solid white;
+    margin: .3em;
+
+    &.is-disabled {
+      opacity: .2;
+    }
+  }
+
+}
