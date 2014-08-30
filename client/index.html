@@ -13,13 +13,17 @@
 </head>
 
 <body>
-  {{> layout}}
 </body>
 
 <template name="layout">
-  {{> menu}}
+  {{> yield region ='menuTop'}}
   <div class="app-content">
-    {{> cards}}
-    
+    {{> yield}}
   </div>
 </template>
+
+<template name="myTemplate">
+    {{> cards}}
+  
+</template>
+
