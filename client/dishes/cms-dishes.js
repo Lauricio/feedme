@@ -16,3 +16,22 @@ Template.CMSdishes.events({
       fr.readAsDataURL(file);
   }
 })
+
+
+Template.CMSdishes.events({
+  'click .js-editDish': function (e, t) {
+    Session.toggle("newDishOpen");
+  }
+});
+
+Template.addDish.helpers({
+  openState: function () {
+    return Session.equals('newDishOpen', true) ? 'is-open' : '';
+  }
+})
+
+Template.addDish.events({
+  'click .js-closeModal': function (e, t) {
+    Session.set("newDishOpen", false);
+  }
+});
