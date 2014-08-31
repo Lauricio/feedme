@@ -1,12 +1,14 @@
 <template name="cards">
     <div class="cards-header no-drag">
-      <button class="navigation icn-chevron-left" id="dayBack"></button>
-      <button class="control" id="selectDate">Tuesday, May 14</button>
-      <button class="navigation icn-chevron-right" id="dayForward"></button>
+      <button class="navigation icn-chevron-left js-goDayBack" id="dayBack"></button>
+      <button class="control" id="selectDate">{{currentDay}}</button>
+      <button class="navigation icn-chevron-right js-goDayForward" id="dayForward"></button>
     </div>
     <div class="card-list">
       {{#each dayCards}}
         {{> cardsList}}
+      {{else}}
+        <h3>No active meals yet</h3>
       {{/each}}
     </div>
 </template>

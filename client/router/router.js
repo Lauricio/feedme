@@ -23,6 +23,10 @@ Router.map( function () {
     yieldTemplates: {
       'menu': {to: 'menuTop'}
     },
+    onBeforeAction: function () {
+      var todayFormated = moment(new Date()).format('YYYY-MM-DD')
+      Session.set('activeDay', todayFormated)
+    }
   });
 
 });
