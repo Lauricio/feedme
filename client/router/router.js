@@ -29,4 +29,22 @@ Router.map( function () {
     }
   });
 
+  this.route('CMSdishes', { 
+    path: '/CMSdishes',
+    layoutTemplate: 'layout',
+    template: 'CMSdishes',
+    yieldTemplates: {
+      'menu': {to: 'menuTop'}
+    }
+  });
+
+  this.route('profileSettings', { 
+    path: '/profileSettings',
+    layoutTemplate: 'layout',
+    template: 'profileSettings',
+    yieldTemplates: {
+      'menu': {to: 'menuTop'}
+    }
+  });
+
 });
