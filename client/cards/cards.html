@@ -26,12 +26,13 @@
       {{/each}}  
     </div>
     <div class="user-list">
-      {{#each whoIsEating}}
-        {{> users}}
-      {{/each}}
       {{#with myAttendance}}
         {{> userItemPersonal}}
       {{/with}}
+      {{#each whoIsEating}}
+        {{> users}}
+      {{/each}}
+      
     </div>
   </div>
   
