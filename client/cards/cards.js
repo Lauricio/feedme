@@ -3,7 +3,7 @@ Template.cards.helpers({
     return moment(Session.get('activeDay'), 'YYYY-MM-DD').format('dddd, MMMM Do')
   },
   dayCards: function () {
-    return Meals.find()
+    return Meals.find({day: Session.get('activeDay')})
   }
 });
 
@@ -18,6 +18,6 @@ Template.cards.events({
 
 Template.cardsList.helpers({
   whoIsEating: function () {
-    return Attending.find({mealId: this._id})
+    return Attending.find({mealId: this._id, disabled: false})
   }
 })

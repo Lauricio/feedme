@@ -1,9 +1,9 @@
 Meteor.startup(function () {
-  Days.remove({})
-  Meteor.users.remove({})
-  Dishes.remove({})
-  Attending.remove({})
-  Meals.remove({});
+  // Days.remove({})
+  // Meteor.users.remove({})
+  // Dishes.remove({})
+  // Attending.remove({})
+  // Meals.remove({});
 if (Meteor.users.find().count() == 0) {
 
   var today = new Date();
@@ -44,7 +44,8 @@ if (Meteor.users.find().count() == 0) {
       day: todayFormated,
       owner: id,
       mealId: 'Meal0001',
-      myMeals: [{dish: 'Dish0001', eating: true}, {dish: 'Dish0002', eating: true}]
+      myMeals: [{dish: 'Dish0001', eating: true}, {dish: 'Dish0002', eating: true}],
+      disabled: false
     })
 
   });

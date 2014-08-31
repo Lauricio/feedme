@@ -19,6 +19,10 @@ Template.userItemPersonal.helpers({
 });
 
 Template.userItemPersonal.events({
+  'click .js-removeFromEating': function () {
+    console.log(this)
+    Attending.update({_id: this._id}, {$set: {disabled: true}})
+  },
   'click .js-disableEat': function () {
     var self = this;
     var record =  UI._parentData()
