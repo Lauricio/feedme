@@ -23,4 +23,10 @@ Template.cardsList.helpers({
   myAttendance: function () {
     return Attending.findOne({mealId: this._id, owner: Meteor.userId()})
   }
+});
+
+Template.cardsList.events({
+  'click .js-addNewDishToMeal': function () {
+    Session.set('activeMeal', this._id)
+  }
 })
