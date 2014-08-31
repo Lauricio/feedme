@@ -15,6 +15,20 @@ Template.dishItem.events({
         Session.set('activeDish', this._id)
       }
       Session.toggle('gridOpen');
+  },
+  'click .js-removeDishFromMeal': function () {
+    var self = this;
+    var dishName = Meteor.user().chef ? self.thaiName: self.englishName;
+    if (confirm('Do you want to remove - ' + dishName + ' from the meal?')) {
+      var meal = UI._parentData(1);
+      var index = _.indexOf(_.pluck(meal.dishes, 'dish'), self._id);
+      var modifier = {$pull: {}};
+      modifier.$pull["dishes"] = meal.dishes[index];
+      console.log('%c modifier   ',  'background: #B3CC57; color: white; padding: 1px 15px 1px 5px;', modifier);
+      Meteor.call('removeMealAttending', meal._id, self._id )
+      Meals.update({_id: meal._id}, modifier);
+    }
+
   }
 });
 
