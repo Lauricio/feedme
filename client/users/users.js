@@ -23,8 +23,12 @@ Template.userItemPersonal.events({
     console.log(this)
     Attending.update({_id: this._id}, {$set: {disabled: true}})
   },
+  'click .js-enableEating': function () {
+    Attending.update({_id: this._id}, {$set: {disabled: false}})
+  },
   'click .js-disableEat': function () {
     var self = this;
+    var record =  UI._parentData()
     var record =  UI._parentData()
 
     var index = _.indexOf(_.pluck(record.myMeals, 'dish'), self.dish);

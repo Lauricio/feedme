@@ -27,15 +27,20 @@
 
 <template name="userItemPersonal">
     <div class="user-list-item">
-          <div class="picture js-removeFromEating">
-            <span class="placeholder icn-close"></span>
-          </div>
-      {{#if picture}}
+      {{#if disabled}}
+        <div class="picture js-enableEating">
+          <span class="placeholder icn-close"></span>
+        </div>
       {{else}}
-  <!--       <div class="picture">
-          <span class="placeholder icn-user"></span>
-        </div> -->
+            {{#if currentUser.picture}}
+              <img src="{{currentUser.picture}}" class="picture js-removeFromEating">
+            {{else}}
+              <div class="picture js-removeFromEating">
+                <span class="placeholder icn-user"></span>
+              </div>
+            {{/if}}
       {{/if}}
+      
       
       <div class="details">
         {{#each myMeals}}
