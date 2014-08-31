@@ -1,9 +1,3 @@
-Template.profileSettings.helpers({
-  testing: function () {
-    console.log('%c this   ',  'background: #B3CC57; color: white; padding: 1px 15px 1px 5px;', this);
-  }
-});
-
 Template.profileSettings.events({
   'click .js-enableFruit': function () {
     var modifier = {$set: {}};
