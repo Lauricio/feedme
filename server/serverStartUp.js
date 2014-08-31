@@ -31,7 +31,85 @@ if (Meteor.users.find().count() == 0) {
     id = Accounts.createUser({
       email: user.email,
       password: "apple1",
-      profile: { name: user.name }
+      profile: { name: user.name ,
+        days: [{
+              weekday: 'Monday',
+              breakfast: {
+                day: '0',
+                mealType: 'breakfast',
+                time: '10:00',
+                fruit: true,
+                food: false,
+                notEating: false
+              },
+              lunch: {
+                day: '0',
+                mealType: 'lunch',
+                time: '15:00',
+                fruit: true,
+                food: false,
+                notEating: false
+              },
+              dinner: {
+                day: '0',
+                mealType: 'dinner',
+                time: '19:00',
+                fruit: true,
+                food: false,
+                notEating: false
+              },
+            },
+            { weekday: 'Tuesday',
+              breakfast: {
+                day: '1',
+                mealType: 'breakfast',
+                time: '10:00',
+                fruit: true,
+                food: false,
+                notEating: false
+              },
+              lunch: {
+                day: '1',
+                mealType: 'lunch',
+                time: '15:00',
+                fruit: true,
+                food: false,
+                notEating: false
+              },
+              dinner: {
+                day: '1',
+                mealType: 'dinner',
+                time: '19:00',
+                fruit: true,
+                food: false,
+                notEating: false
+              }},
+              { weekday: 'Wenesday',
+                breakfast: {
+                  day: '2',
+                  mealType: 'breakfast',
+                  time: '10:00',
+                  fruit: false,
+                  food: false,
+                  notEating: true
+                },
+                lunch: {
+                  day: '2',
+                  mealType: 'lunch',
+                  time: '15:00',
+                  fruit: true,
+                  food: false,
+                  notEating: false
+                },
+                dinner: {
+                  day: '2',
+                  mealType: 'dinner',
+                  time: '19:00',
+                  fruit: false,
+                  food: true,
+                  notEating: false
+                }},
+              ]}
     });
 
     if (user.roles.length > 0) {

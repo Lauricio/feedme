@@ -1,13 +1,37 @@
 <template name="profileSettings">
+  
+  <div class="settings-block">
+    {{#each currentUser.profile.days}}
+      {{testing}}
+    <h4 class="title">{{weekday}}</h4>
+      {{#with breakfast}}
+        <div class="controls">
+          <div class="time-label">{{time}}</div>
+          <button class="control icn-fruits {{#if fruit}} is-enabled js-disableFruit {{else}} js-enableFruit {{/if}}"></button>
+          <button class="control icn-food {{#if food}} is-enabled js-disableFood {{else}} js-enableFood {{/if}}"></button>
+          <button class="control icn-close {{#if notEating}} is-enabled js-enableEating {{else}} js-disableEating {{/if}}"></button>
+        </div>
+      {{/with}}
 
-<div class="settings-block">
-  <h4 class="title">Monday</h4>
-  <div class="controls">
-    <div class="time-label">10:00</div>
-    <button class="control icn-fruits"></button>
-    <button class="control icn-food is-enabled"></button>
-    <button class="control icn-close "></button>
+      {{#with lunch}}
+        <div class="controls">
+          <div class="time-label">{{time}}</div>
+          <button class="control icn-fruits {{#if fruit}} is-enabled js-disableFruit {{else}} js-enableFruit {{/if}}"></button>
+          <button class="control icn-food {{#if food}} is-enabled js-disableFood {{else}} js-enableFood {{/if}}"></button>
+          <button class="control icn-close {{#if notEating}} is-enabled js-enableEating {{else}} js-disableEating {{/if}}"></button>
+        </div>
+      {{/with}}
+
+      {{#with dinner}}
+        <div class="controls">
+          <div class="time-label">{{time}}</div>
+          <button class="control icn-fruits {{#if fruit}} is-enabled js-disableFruit {{else}} js-enableFruit {{/if}}"></button>
+          <button class="control icn-food {{#if food}} is-enabled js-disableFood {{else}} js-enableFood {{/if}}"></button>
+          <button class="control icn-close {{#if notEating}} is-enabled js-enableEating {{else}} js-disableEating {{/if}}"></button>
+        </div>
+      {{/with}}
+    {{/each}}
   </div>
-</div>
+
 
 </template>
