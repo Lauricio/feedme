@@ -1,7 +1,7 @@
 <template name="profileSettings">
   
-  <div class="settings-block">
     {{#each currentUser.profile.days}}
+  <div class="settings-block">
       {{testing}}
     <h4 class="title">{{weekday}}</h4>
       {{#with breakfast}}
@@ -30,8 +30,8 @@
           <button class="control icn-close {{#if notEating}} is-enabled js-enableEating {{else}} js-disableEating {{/if}}"></button>
         </div>
       {{/with}}
-    {{/each}}
   </div>
+    {{/each}}
 
 
 </template>
