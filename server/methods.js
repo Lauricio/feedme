@@ -16,7 +16,9 @@ Meteor.methods({
     var meal = Meals.findOne({_id: mealId})
     var users = Meteor.users.find({chef: {$ne: true}})
     users.forEach(function (user) {
-
+      if (user) {
+        
+      }
     })
   }
 })

@@ -41,7 +41,8 @@
 </template>
 
 <template name="selectDish">
-<div class="add-dish-modal no-drag is-open {{openState}}">
+<div class="add-dish-modal no-drag {{openState}}">
+   <button class=" js-closeSelectDish">close</button>
    {{#each dishesToSelect}}
       {{> dishesForAddingToMeal}}
    {{/each}}

@@ -81,6 +81,12 @@ Template.selectDish.helpers({
   }
 });
 
+Template.selectDish.events({
+  'click .js-closeSelectDish': function () {
+    Session.set('addDishToMealOpen', false)
+  }
+})
+
 Template.dishesForAddingToMeal.events({
   'click .js-addToMeal': function () {
     var self = this;

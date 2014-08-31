@@ -28,5 +28,6 @@ Template.cardsList.helpers({
 Template.cardsList.events({
   'click .js-addNewDishToMeal': function () {
     Session.set('activeMeal', this._id)
+    Session.set('addDishToMealOpen', true)
   }
 })
