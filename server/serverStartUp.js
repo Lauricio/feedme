@@ -38,7 +38,7 @@ if (Meteor.users.find().count() == 0) {
                 day: '0',
                 mealType: 'breakfast',
                 time: '10:00',
-                fruit: true,
+                fruit: false,
                 food: false,
                 notEating: false
               },
@@ -46,7 +46,7 @@ if (Meteor.users.find().count() == 0) {
                 day: '0',
                 mealType: 'lunch',
                 time: '15:00',
-                fruit: true,
+                fruit: false,
                 food: false,
                 notEating: false
               },
@@ -54,7 +54,7 @@ if (Meteor.users.find().count() == 0) {
                 day: '0',
                 mealType: 'dinner',
                 time: '19:00',
-                fruit: true,
+                fruit: false,
                 food: false,
                 notEating: false
               },
@@ -64,7 +64,7 @@ if (Meteor.users.find().count() == 0) {
                 day: '1',
                 mealType: 'breakfast',
                 time: '10:00',
-                fruit: true,
+                fruit: false,
                 food: false,
                 notEating: false
               },
@@ -72,7 +72,7 @@ if (Meteor.users.find().count() == 0) {
                 day: '1',
                 mealType: 'lunch',
                 time: '15:00',
-                fruit: true,
+                fruit: false,
                 food: false,
                 notEating: false
               },
@@ -80,7 +80,7 @@ if (Meteor.users.find().count() == 0) {
                 day: '1',
                 mealType: 'dinner',
                 time: '19:00',
-                fruit: true,
+                fruit: false,
                 food: false,
                 notEating: false
               }},
@@ -91,13 +91,13 @@ if (Meteor.users.find().count() == 0) {
                   time: '10:00',
                   fruit: false,
                   food: false,
-                  notEating: true
+                  notEating: false
                 },
                 lunch: {
                   day: '2',
                   mealType: 'lunch',
                   time: '15:00',
-                  fruit: true,
+                  fruit: false,
                   food: false,
                   notEating: false
                 },
@@ -106,9 +106,109 @@ if (Meteor.users.find().count() == 0) {
                   mealType: 'dinner',
                   time: '19:00',
                   fruit: false,
-                  food: true,
+                  food: false,
                   notEating: false
                 }},
+                { weekday: 'Thursday',
+                  breakfast: {
+                    day: '2',
+                    mealType: 'breakfast',
+                    time: '10:00',
+                    fruit: false,
+                    food: false,
+                    notEating: false
+                  },
+                  lunch: {
+                    day: '2',
+                    mealType: 'lunch',
+                    time: '15:00',
+                    fruit: false,
+                    food: false,
+                    notEating: false
+                  },
+                  dinner: {
+                    day: '2',
+                    mealType: 'dinner',
+                    time: '19:00',
+                    fruit: false,
+                    food: false,
+                    notEating: false
+                  }},
+                  { weekday: 'Friday',
+                    breakfast: {
+                      day: '2',
+                      mealType: 'breakfast',
+                      time: '10:00',
+                      fruit: false,
+                      food: false,
+                      notEating: false
+                    },
+                    lunch: {
+                      day: '2',
+                      mealType: 'lunch',
+                      time: '15:00',
+                      fruit: false,
+                      food: false,
+                      notEating: false
+                    },
+                    dinner: {
+                      day: '2',
+                      mealType: 'dinner',
+                      time: '19:00',
+                      fruit: false,
+                      food: false,
+                      notEating: false
+                    }},
+                    { weekday: 'Saturday',
+                      breakfast: {
+                        day: '2',
+                        mealType: 'breakfast',
+                        time: '10:00',
+                        fruit: false,
+                        food: false,
+                        notEating: false
+                      },
+                      lunch: {
+                        day: '2',
+                        mealType: 'lunch',
+                        time: '15:00',
+                        fruit: false,
+                        food: false,
+                        notEating: false
+                      },
+                      dinner: {
+                        day: '2',
+                        mealType: 'dinner',
+                        time: '19:00',
+                        fruit: false,
+                        food: false,
+                        notEating: false
+                      }},
+                      { weekday: 'Sunday',
+                        breakfast: {
+                          day: '2',
+                          mealType: 'breakfast',
+                          time: '10:00',
+                          fruit: false,
+                          food: false,
+                          notEating: false
+                        },
+                        lunch: {
+                          day: '2',
+                          mealType: 'lunch',
+                          time: '15:00',
+                          fruit: false,
+                          food: false,
+                          notEating: false
+                        },
+                        dinner: {
+                          day: '2',
+                          mealType: 'dinner',
+                          time: '19:00',
+                          fruit: false,
+                          food: false,
+                          notEating: false
+                        }},
               ]}
     });
 
