@@ -2,6 +2,11 @@ Accounts.onCreateUser(function(options, user) {
   console.log('%c user, options   ',  'background: #B3CC57; color: white; padding: 1px 15px 1px 5px;', user);
   user.profile = {};
   user.profile.fullName = options.profile && options.profile.fullName ? options.profile.fullName : 'Guest' 
+
+  if (user.email === 'chef@tapfuse.io')
+    return user;
+
+
   user.profile.days = [{
           weekday: 'Monday',
           breakfast: {
