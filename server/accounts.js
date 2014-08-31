@@ -3,8 +3,10 @@ Accounts.onCreateUser(function(options, user) {
   user.profile = {};
   user.profile.fullName = options.profile && options.profile.fullName ? options.profile.fullName : 'Guest' 
 
-  if (user.email === 'chef@tapfuse.io')
+  if (user.email === 'chef@tapfuse.io') {
+    user.chef = true;
     return user;
+  }
 
 
   user.profile.days = [{
