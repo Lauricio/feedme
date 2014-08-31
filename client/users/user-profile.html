@@ -1,37 +1,33 @@
 <template name="profileSettings">
-  
-    {{#each currentUser.profile.days}}
-  <div class="settings-block">
-      {{testing}}
-    <h4 class="title">{{weekday}}</h4>
-      {{#with breakfast}}
-        <div class="controls">
-          <div class="time-label">{{time}}</div>
-          <button class="control icn-fruits {{#if fruit}} is-enabled js-disableFruit {{else}} js-enableFruit {{/if}}"></button>
-          <button class="control icn-food {{#if food}} is-enabled js-disableFood {{else}} js-enableFood {{/if}}"></button>
-          <button class="control icn-close {{#if notEating}} is-enabled js-enableEating {{else}} js-disableEating {{/if}}"></button>
-        </div>
-      {{/with}}
+  {{#each currentUser.profile.days}}
+    <div class="settings-block">
+      <h4 class="title">{{weekday}}</h4>
+        {{#with breakfast}}
+          <div class="controls">
+            <div class="time-label">{{time}}</div>
+            <button class="control icn-fruits {{#if fruit}} is-enabled js-disableFruit {{else}} js-enableFruit {{/if}}"></button>
+            <button class="control icn-food {{#if food}} is-enabled js-disableFood {{else}} js-enableFood {{/if}}"></button>
+            <button class="control icn-close {{#if notEating}} is-enabled js-enableEating {{else}} js-disableEating {{/if}}"></button>
+          </div>
+        {{/with}}
 
-      {{#with lunch}}
-        <div class="controls">
-          <div class="time-label">{{time}}</div>
-          <button class="control icn-fruits {{#if fruit}} is-enabled js-disableFruit {{else}} js-enableFruit {{/if}}"></button>
-          <button class="control icn-food {{#if food}} is-enabled js-disableFood {{else}} js-enableFood {{/if}}"></button>
-          <button class="control icn-close {{#if notEating}} is-enabled js-enableEating {{else}} js-disableEating {{/if}}"></button>
-        </div>
-      {{/with}}
+        {{#with lunch}}
+          <div class="controls">
+            <div class="time-label">{{time}}</div>
+            <button class="control icn-fruits {{#if fruit}} is-enabled js-disableFruit {{else}} js-enableFruit {{/if}}"></button>
+            <button class="control icn-food {{#if food}} is-enabled js-disableFood {{else}} js-enableFood {{/if}}"></button>
+            <button class="control icn-close {{#if notEating}} is-enabled js-enableEating {{else}} js-disableEating {{/if}}"></button>
+          </div>
+        {{/with}}
 
-      {{#with dinner}}
-        <div class="controls">
-          <div class="time-label">{{time}}</div>
-          <button class="control icn-fruits {{#if fruit}} is-enabled js-disableFruit {{else}} js-enableFruit {{/if}}"></button>
-          <button class="control icn-food {{#if food}} is-enabled js-disableFood {{else}} js-enableFood {{/if}}"></button>
-          <button class="control icn-close {{#if notEating}} is-enabled js-enableEating {{else}} js-disableEating {{/if}}"></button>
-        </div>
-      {{/with}}
-  </div>
-    {{/each}}
-
-
+        {{#with dinner}}
+          <div class="controls">
+            <div class="time-label">{{time}}</div>
+            <button class="control icn-fruits {{#if fruit}} is-enabled js-disableFruit {{else}} js-enableFruit {{/if}}"></button>
+            <button class="control icn-food {{#if food}} is-enabled js-disableFood {{else}} js-enableFood {{/if}}"></button>
+            <button class="control icn-close {{#if notEating}} is-enabled js-enableEating {{else}} js-disableEating {{/if}}"></button>
+          </div>
+        {{/with}}
+    </div>
+  {{/each}}
 </template>
