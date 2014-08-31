@@ -111,7 +111,7 @@ if (Meteor.users.find().count() == 0) {
                 }},
                 { weekday: 'Thursday',
                   breakfast: {
-                    day: '2',
+                    day: '3',
                     mealType: 'breakfast',
                     time: '10:00',
                     fruit: false,
@@ -119,7 +119,7 @@ if (Meteor.users.find().count() == 0) {
                     notEating: false
                   },
                   lunch: {
-                    day: '2',
+                    day: '3',
                     mealType: 'lunch',
                     time: '15:00',
                     fruit: false,
@@ -127,7 +127,7 @@ if (Meteor.users.find().count() == 0) {
                     notEating: false
                   },
                   dinner: {
-                    day: '2',
+                    day: '3',
                     mealType: 'dinner',
                     time: '19:00',
                     fruit: false,
@@ -136,7 +136,7 @@ if (Meteor.users.find().count() == 0) {
                   }},
                   { weekday: 'Friday',
                     breakfast: {
-                      day: '2',
+                      day: '4',
                       mealType: 'breakfast',
                       time: '10:00',
                       fruit: false,
@@ -144,7 +144,7 @@ if (Meteor.users.find().count() == 0) {
                       notEating: false
                     },
                     lunch: {
-                      day: '2',
+                      day: '4',
                       mealType: 'lunch',
                       time: '15:00',
                       fruit: false,
@@ -152,7 +152,7 @@ if (Meteor.users.find().count() == 0) {
                       notEating: false
                     },
                     dinner: {
-                      day: '2',
+                      day: '4',
                       mealType: 'dinner',
                       time: '19:00',
                       fruit: false,
@@ -161,7 +161,7 @@ if (Meteor.users.find().count() == 0) {
                     }},
                     { weekday: 'Saturday',
                       breakfast: {
-                        day: '2',
+                        day: '5',
                         mealType: 'breakfast',
                         time: '10:00',
                         fruit: false,
@@ -169,7 +169,7 @@ if (Meteor.users.find().count() == 0) {
                         notEating: false
                       },
                       lunch: {
-                        day: '2',
+                        day: '5',
                         mealType: 'lunch',
                         time: '15:00',
                         fruit: false,
@@ -177,7 +177,7 @@ if (Meteor.users.find().count() == 0) {
                         notEating: false
                       },
                       dinner: {
-                        day: '2',
+                        day: '5',
                         mealType: 'dinner',
                         time: '19:00',
                         fruit: false,
@@ -186,7 +186,7 @@ if (Meteor.users.find().count() == 0) {
                       }},
                       { weekday: 'Sunday',
                         breakfast: {
-                          day: '2',
+                          day: '6',
                           mealType: 'breakfast',
                           time: '10:00',
                           fruit: false,
@@ -194,7 +194,7 @@ if (Meteor.users.find().count() == 0) {
                           notEating: false
                         },
                         lunch: {
-                          day: '2',
+                          day: '6',
                           mealType: 'lunch',
                           time: '15:00',
                           fruit: false,
@@ -202,7 +202,7 @@ if (Meteor.users.find().count() == 0) {
                           notEating: false
                         },
                         dinner: {
-                          day: '2',
+                          day: '6',
                           mealType: 'dinner',
                           time: '19:00',
                           fruit: false,
