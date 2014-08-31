@@ -1,10 +1,12 @@
 <template name="CMSdishes">
   <div class="dish-controls">
-    <button class="control icn-plus"></button>
+    <button class="control icn-plus js-addNewDish"></button>
     <input type="text" class="search form-control" placeholder="search">
   </div>
   <div class="cms-dish-list">
-    {{> cmsDishItem}}
+    {{#each dishes}}
+      {{> cmsDishItem}}
+    {{/each}}
   </div>
   {{> addDish}}
 </template>
@@ -12,12 +14,12 @@
 
 <template name="cmsDishItem">
   <div class="dish-item">
-    <img class="illustration" src="http://imgur.com/hAEz3t4.jpg" alt="">
+    <img class="illustration" src="{{picture}}" alt="">
       <button class="ing-control icn-pencil js-editDish"></button>
     <div class="meta">
       <div class="info">
-        <h4 class="title top">Tom Yam</h4>
-        <h4 class="title">ต้มยำ</h4>
+        <h4 class="title top">{{englishName}}</h4>
+        <h4 class="title">{{thaiName}}</h4>
       </div>
     </div>
     <button class="remove-control icn-trash"></button>
@@ -26,12 +28,14 @@
 
 <template name="addDish">
   <div class="add-dish-modal no-drag {{openState}}">
-    <input type="text" class="title form-control" placeholder="Dish name">
-    <input type="text" class="title form-control" placeholder="Thai Dish name">
-    <button class="close-modal icn-close js-closeModal"></button>
-    <button class="save-modal icn-close js-closeModal"></button>
-    <input type="file" class="js-uploadPicture" id="pictureUpload">
-    <img class="thumbnail" src="http://imgur.com/hAEz3t4.jpg" alt="">
+    {{#with editableDish}}
+      <input type="text" class="title form-control" placeholder="{{englishName}}">
+      <input type="text" class="title form-control" placeholder="{{thaiName}}">
+      <button class="close-modal icn-close js-closeModal"></button>
+      <button class="save-modal icn-close js-closeModal"></button>
+      <input type="file" class="js-uploadPicture" id="pictureUpload">
+      <img class="thumbnail" src="{{picture}}" alt="">
+    {{/with}}  
   </div>
   <div class="add-dish-modal-overlay no-drag"></div>
 </template>
