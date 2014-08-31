@@ -1,6 +1,6 @@
 Template.CMSdishes.helpers({
   dishes: function () {
-    return Dishes.find()
+    return Dishes.find({}, {sort: {createdAt: -1}})
   }
 });
 
@@ -12,14 +12,27 @@ Template.CMSdishes.events({
       englishName: '',
       picture: '',
       timesOrdered: 0,
-      offeredBy: []
+      offeredBy: [],
+      createdAt: new Date()
     }, function (err, id) {
       Session.set('editingDishId', id)
+      Session.set("newDishOpen", true);
     })
+  }
+});
+
+Template.cmsDishItem.events({
+  'click .js-deleteDishes': function () {
+    var self = this;
+    if (confirm('Are you sure you want to delete this dish?')) {
+      Session.set("newDishOpen", false);
+      Dishes.remove({_id: self._id})
+      
+    }
   },
   'click .js-editDish': function (e, t) {
     Session.set('editingDishId', this._id)
-    Session.toggle("newDishOpen");
+    Session.set("newDishOpen", true);
   }
 })
 
@@ -35,17 +48,25 @@ Template.addDish.helpers({
 Template.addDish.events({
   'change .js-uploadPicture': function (e, t) {
     var file = e.target.files[0];
-    if (file)
-    console.log(file)
-    // if (confirm('All Attendees will be delete, Continue ?')) {
-      var fr = new FileReader();
-      fr.onload = function (e) {
-        console.log('%c e   ',  'background: #B3CC57; color: white; padding: 1px 15px 1px 5px;', e.target.result);
-        
-      }
-      fr.readAsDataURL(file);
+    var fr = new FileReader();
+    fr.onload = function (e) {
+      var newImg = e.target.result;
+      if (newImg)
+        Dishes.update({_id: Session.get('editingDishId')}, {$set: {picture: newImg}})
+      
+    }
+    fr.readAsDataURL(file);
   },
   'click .js-closeModal': function (e, t) {
     Session.set("newDishOpen", false);
+  },
+  'click .js-saveDish': function (e, t) {
+    var thaiName = t.find('#editDishThaiName').value;
+    var englishName = t.find('#editDishEngName').value;
+    Dishes.update({_id: this._id}, {$set: {
+      thaiName: thaiName,
+      englishName: englishName
+    }});
+    Session.set('newDishOpen', false)
   }
 });
