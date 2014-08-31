@@ -1,0 +1,54 @@
+@import "../spark.import.less";
+
+.settings-block {
+  padding: .5em;
+
+  .title {
+    
+  }
+
+  .controls {
+    display: flex;
+
+    .time-label {
+      background: @clouds;
+      color: @dark-heading;
+      padding: .8em;
+    }
+
+    .control {
+      &:extend(.unstyled-button);
+      background: @clouds;
+      border-left: 1px solid @light-heading;
+      font-size: 1.7em;
+      padding: 0 .7em;
+      color: lighten(@dark-heading, 5%);
+
+      &.icn-fruits {
+        &.is-enabled {
+          background-color: @nephritis;
+        }
+      }
+
+      &.icn-food {
+        &.is-enabled {
+          background-color: @peter-river;
+        }
+      }
+
+      &.icn-close {
+        &.is-enabled {
+          background-color: @orange;
+        }
+      }
+
+      &.is-enabled {
+        color: white;
+      }
+    }
+  }
+
+
+}
+
+
