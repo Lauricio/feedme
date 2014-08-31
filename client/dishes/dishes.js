@@ -24,7 +24,6 @@ Template.dishItem.events({
       var index = _.indexOf(_.pluck(meal.dishes, 'dish'), self._id);
       var modifier = {$pull: {}};
       modifier.$pull["dishes"] = meal.dishes[index];
-      console.log('%c modifier   ',  'background: #B3CC57; color: white; padding: 1px 15px 1px 5px;', modifier);
       Meteor.call('removeMealAttending', meal._id, self._id )
       Meals.update({_id: meal._id}, modifier);
     }

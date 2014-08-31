@@ -70,3 +70,31 @@ Template.addDish.events({
     Session.set('newDishOpen', false)
   }
 });
+
+
+Template.selectDish.helpers({
+  openState: function () {
+    return Session.equals('addDishToMealOpen', true) ? 'is-open' : '';
+  },
+  dishesToSelect: function () {
+    return Dishes.find()
+  }
+});
+
+Template.dishesForAddingToMeal.events({
+  'click .js-addToMeal': function () {
+    var self = this;
+    var meal = Meals.findOne({_id: Session.get('activeMeal')})
+    var index = _.indexOf(_.pluck(meal.dishes, 'dish'), self._id);
+    console.log(index)
+    if (index < 0) {
+      Meals.update({_id: meal._id}, {$addToSet: {dishes: {dish: self._id, dishOptions: []}}});
+      Meteor.call('addDishToAttending', meal._id, self._id)
+      
+    }
+    // var modifier = {$pull: {}};
+    // modifier.$pull["dishes"] = meal.dishes[index];
+    // Meteor.call('removeMealAttending', meal._id, self._id )
+    // Meals.update({_id: meal._id}, modifier);
+  }
+})

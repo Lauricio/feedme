@@ -14,6 +14,7 @@ if (Meteor.users.find().count() == 0) {
       _id: "Meal0001",
       day: todayFormated,
       time: '10:00',
+      mealType: 'breakfast',
       owner: 'notSet',
       dishes: [{dish: 'Dish0001', dishOptions: []}, 
       {dish: 'Dish0002', dishOptions: ['chicken']}]

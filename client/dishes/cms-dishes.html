@@ -41,8 +41,24 @@
 </template>
 
 <template name="selectDish">
-<div class="add-dish-modal no-drag is-open {{! openState}}">
- {{> CMSdishes}}
+<div class="add-dish-modal no-drag is-open {{openState}}">
+   {{#each dishesToSelect}}
+      {{> dishesForAddingToMeal}}
+   {{/each}}
 </div>
   
+</template>
+
+<template name="dishesForAddingToMeal">
+  <div class="dish-item">
+    <img class="illustration" src="{{picture}}" alt="">
+      <button class="ing-control icn-pencil js-addToMeal"></button>
+    <div class="meta">
+      <div class="info">
+        <h4 class="title top">{{englishName}}</h4>
+        <h4 class="title">{{thaiName}}</h4>
+      </div>
+    </div>
+    <!-- <button class="remove-control icn-trash js-deleteDishes"></button> -->
+  </div>
 </template>
