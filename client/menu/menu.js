@@ -6,6 +6,8 @@ Template.menu.events({
     Router.go('/CMSdishes')
   },
   'click .js-goToTodayPage': function () {
+    var todayFormated = moment(new Date()).format('YYYY-MM-DD')
+    Session.set('activeDay', todayFormated)
     Router.go('/home')
   }
 })
