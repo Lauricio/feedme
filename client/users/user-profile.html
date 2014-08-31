@@ -1,5 +1,9 @@
 <template name="profileSettings">
-  
+  {{> loginButtons}}
+  <div>
+    <input type="file" class="js-addYourPhoto" label="Add your photo">
+  </div>
+
   <div class="settings-block">
     {{#each currentUser.profile.days}}
     <h4 class="title">{{weekday}}</h4>

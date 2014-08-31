@@ -1,8 +1,8 @@
-Template.users.helpers({
-  itIsMe: function () {
-    return this.owner === Meteor.userId() ? true : false
-  }
-});
+// Template.users.helpers({
+//   itIsMe: function () {
+//     return this.owner === Meteor.userId() ? true : false
+//   }
+// });
 
 Template.userItem.helpers({
  dishPicture: function () {

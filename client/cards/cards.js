@@ -18,6 +18,9 @@ Template.cards.events({
 
 Template.cardsList.helpers({
   whoIsEating: function () {
-    return Attending.find({mealId: this._id, disabled: false})
+    return Attending.find({mealId: this._id, disabled: false, owner: {$ne: Meteor.userId()}})
+  },
+  myAttendance: function () {
+    return Attending.findOne({mealId: this._id, owner: Meteor.userId()})
   }
 })
