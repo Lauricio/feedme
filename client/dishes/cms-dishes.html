@@ -1,4 +1,29 @@
 <template name="CMSdishes">
-  <h1>CMS for dishes</h1>
+  <div class="dish-controls">
+    <button class="control icn-plus"></button>
+    <input type="text" class="search form-control" placeholder="search">
+  </div>
+  <div class="cms-dish-list">
+    {{> cmsDishItem}}
+  </div>
+
+
   <input type="file" class="js-uploadPicture" id="pictureUpload">
 </template>
+
+
+<template name="cmsDishItem">
+<div class="dish-item">
+  <img class="illustration" src="http://imgur.com/hAEz3t4.jpg" alt="">
+    <button class="ing-control icn-pencil js-openGrid"></button>
+  <div class="meta">
+    <div class="info">
+      <h4 class="title top">Tom Yam</h4>
+      <h4 class="title">ต้มยำ</h4>
+    </div>
+  </div>
+  <button class="remove-control icn-trash"></button>
+</div>
+</template>
+
+

@@ -1,0 +1,20 @@
+@import "../spark.import.less";
+
+.dish-controls {
+  display: flex;
+  flex-flow: column wrap;
+
+  .control {
+    &:extend(.unstyled-button);
+    background-color: @feedme;
+    color: white;
+    // color: @feedme;
+    padding: .4em;
+    font-size: 1.6em;
+    margin-bottom: .5rem;
+  }
+
+  .search {
+    margin-bottom: .5rem;
+  }
+}
