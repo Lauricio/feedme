@@ -3,10 +3,12 @@
     <button class="control icn-plus js-addNewDish"></button>
     {{> searchDishesByName}}
   </div>
-  <div class="cms-dish-list">
+  <div class="cms-dish-list native-scroller {{#unless touchEnabled}} is-enabled {{/unless}} has-search" id="cardsListScroller">
+   <div class="scrollerWrapper js-scrollerWatcher">
     {{#each dishes}}
       {{> cmsDishItem}}
     {{/each}}
+  </div>
   </div>
 </template>
 

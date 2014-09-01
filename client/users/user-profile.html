@@ -1,4 +1,8 @@
 <template name="profileSettings">
+
+<div class="native-scroller {{#unless touchEnabled}} is-enabled {{/unless}}">
+ <div class="scrollerWrapper">
+
   {{> loginButtons}}
   <div>
     <input type="file" class="js-addYourPhoto" label="Add your photo">
@@ -35,5 +39,8 @@
       {{/with}}
     {{/each}}
   </div>
+
+</div>
+</div>
 
 </template>
