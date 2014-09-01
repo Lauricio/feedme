@@ -5,7 +5,7 @@
 <template name="userItem">
     <div class="user-list-item">
       {{#if picture}}
-        <img src="https://pbs.twimg.com/profile_images/450916693217267712/fM5IQDNh.jpeg" class="picture">
+        <img src="{{picture}}" class="picture">
       {{else}}
         <div class="picture">
           <span class="placeholder icn-user"></span>
@@ -14,7 +14,9 @@
 
       <div class="details">
         {{#each myMeals}}
-          <img src="{{dishPicture}}" class="thumbnail {{#unless eating}} is-disabled {{/unless}}">
+          {{#if eating}}
+          <img src="{{dishPicture}}" class="thumbnail">
+          {{/if}}
         {{/each}}
       </div>
     </div>
