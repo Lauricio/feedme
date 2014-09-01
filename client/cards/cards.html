@@ -4,12 +4,15 @@
       <button class="control" id="selectDate">{{currentDay}}</button>
       <button class="navigation icn-chevron-right js-goDayForward" id="dayForward"></button>
     </div>
-    <div class="card-list">
-      {{#each dayCards}}
-        {{> cardsList}}
-      {{else}}
-        <h3>No active meals yet</h3>
-      {{/each}}
+
+     <div class="card-list native-scroller {{#unless touchEnabled}} is-enabled {{/unless}} has-sub-header" id="cardsListScroller">
+      <div class="scrollerWrapper js-scrollerWatcher">
+        {{#each dayCards}}
+          {{> cardsList}}
+        {{else}}
+          <h3>No active meals</h3>
+        {{/each}}
+      </div>
     </div>
 </template>
 
