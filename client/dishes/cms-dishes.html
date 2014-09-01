@@ -42,6 +42,7 @@
 <template name="selectDish">
 <div class="select-dish-modal no-drag {{openState}}">
    <button class="close-modal icn-close js-closeSelectDish"></button>
+   {{> searchDishesByName}}
    {{#each dishesToSelect}}
       {{> dishesForAddingToMeal}}
    {{/each}}

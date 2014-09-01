@@ -78,7 +78,7 @@ Template.selectDish.helpers({
     return Session.equals('addDishToMealOpen', true) ? 'is-open' : '';
   },
   dishesToSelect: function () {
-    return Dishes.find()
+    return Session.get('keywords') ? Dishes.searchByName(Session.get('keywords')): Dishes.find({}, {sort: {createdAt: -1}});
   }
 });
 
