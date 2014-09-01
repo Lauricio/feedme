@@ -8,10 +8,13 @@
       {{> loginButtons}}
     </div>
 
+  {{#unless currentUser.chef}}
+
     <div class="file-input-wrapper">
       <button class="btn-file-input">Upload photo</button>
       <input type="file" class="js-addYourPhoto" name="file" />
     </div>
+  {{/unless}}  
   </div>
 
   <div class="settings-block">
