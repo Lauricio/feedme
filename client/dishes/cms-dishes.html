@@ -52,7 +52,11 @@
 <template name="dishesForAddingToMeal">
   <div class="dish-item">
     <img class="illustration" src="{{picture}}" alt="">
-      <button class="ing-control icn-plus js-addToMeal"></button>
+      {{#if alreadyAddedInMeal}}
+        <button class="ing-control icn-checkmark"></button>
+      {{else}}
+        <button class="ing-control icn-plus js-addToMeal"></button>
+      {{/if}}  
       <!-- <button class="ing-control icn-checkmark js-addToMeal"></button> -->
     <div class="meta">
       <div class="info">
