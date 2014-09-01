@@ -3,9 +3,15 @@
 <div class="native-scroller {{#unless touchEnabled}} is-enabled {{/unless}}">
  <div class="scrollerWrapper">
 
-  {{> loginButtons}}
-  <div>
-    <input type="file" class="js-addYourPhoto" label="Add your photo">
+  <div class="profile-block">
+    <div class="login-buttons-wrapper">
+      {{> loginButtons}}
+    </div>
+
+    <div class="file-input-wrapper">
+      <button class="btn-file-input">Upload photo</button>
+      <input type="file" class="js-addYourPhoto" name="file" />
+    </div>
   </div>
 
   <div class="settings-block">

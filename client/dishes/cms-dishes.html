@@ -34,7 +34,13 @@
       <input type="text" class="title form-control" value="{{thaiName}}" id="editDishThaiName">
       <button class="save-modal icn-checkmark js-saveDish"></button>
       <button class="close-modal icn-close js-closeModal"></button>
-      <input type="file" class="js-uploadPicture" id="pictureUpload">
+
+      <div class="file-input-wrapper">
+        <button class="btn-file-input">Upload Photo</button>
+        <input type="file" class="js-uploadPicture " name="file" />
+      </div>
+
+      <!-- <input type="file" class="js-uploadPicture" id="pictureUpload"> -->
       <img class="thumbnail" src="{{picture}}" alt="">
     {{/with}}
   </div>
