@@ -3,12 +3,12 @@ Accounts.onCreateUser(function(options, user) {
   user.profile = {};
   user.profile.fullName = options.profile && options.profile.fullName ? options.profile.fullName : 'Guest' 
 
-  if (user.email === 'chef@tapfuse.io') {
+  if (user.profile.fullName === 'Sa') {
     user.chef = true;
     return user;
   }
 
-
+  user.eating = true;
   user.profile.days = [{
           weekday: 'Monday',
           breakfast: {
@@ -16,7 +16,7 @@ Accounts.onCreateUser(function(options, user) {
             mealType: 'breakfast',
             time: '10:00',
             fruit: false,
-            food: false,
+            food: true,
             notEating: false
           },
           lunch: {
@@ -24,7 +24,7 @@ Accounts.onCreateUser(function(options, user) {
             mealType: 'lunch',
             time: '15:00',
             fruit: false,
-            food: false,
+            food: true,
             notEating: false
           },
           dinner: {
@@ -32,7 +32,7 @@ Accounts.onCreateUser(function(options, user) {
             mealType: 'dinner',
             time: '19:00',
             fruit: false,
-            food: false,
+            food: true,
             notEating: false
           },
         },
@@ -42,7 +42,7 @@ Accounts.onCreateUser(function(options, user) {
             mealType: 'breakfast',
             time: '10:00',
             fruit: false,
-            food: false,
+            food: true,
             notEating: false
           },
           lunch: {
@@ -50,7 +50,7 @@ Accounts.onCreateUser(function(options, user) {
             mealType: 'lunch',
             time: '15:00',
             fruit: false,
-            food: false,
+            food: true,
             notEating: false
           },
           dinner: {
@@ -58,7 +58,7 @@ Accounts.onCreateUser(function(options, user) {
             mealType: 'dinner',
             time: '19:00',
             fruit: false,
-            food: false,
+            food: true,
             notEating: false
           }},
           { weekday: 'Wenesday',
@@ -67,7 +67,7 @@ Accounts.onCreateUser(function(options, user) {
               mealType: 'breakfast',
               time: '10:00',
               fruit: false,
-              food: false,
+              food: true,
               notEating: false
             },
             lunch: {
@@ -75,7 +75,7 @@ Accounts.onCreateUser(function(options, user) {
               mealType: 'lunch',
               time: '15:00',
               fruit: false,
-              food: false,
+              food: true,
               notEating: false
             },
             dinner: {
@@ -83,7 +83,7 @@ Accounts.onCreateUser(function(options, user) {
               mealType: 'dinner',
               time: '19:00',
               fruit: false,
-              food: false,
+              food: true,
               notEating: false
             }},
             { weekday: 'Thursday',
@@ -92,7 +92,7 @@ Accounts.onCreateUser(function(options, user) {
                 mealType: 'breakfast',
                 time: '10:00',
                 fruit: false,
-                food: false,
+                food: true,
                 notEating: false
               },
               lunch: {
@@ -100,7 +100,7 @@ Accounts.onCreateUser(function(options, user) {
                 mealType: 'lunch',
                 time: '15:00',
                 fruit: false,
-                food: false,
+                food: true,
                 notEating: false
               },
               dinner: {
@@ -108,7 +108,7 @@ Accounts.onCreateUser(function(options, user) {
                 mealType: 'dinner',
                 time: '19:00',
                 fruit: false,
-                food: false,
+                food: true,
                 notEating: false
               }},
               { weekday: 'Friday',
@@ -117,7 +117,7 @@ Accounts.onCreateUser(function(options, user) {
                   mealType: 'breakfast',
                   time: '10:00',
                   fruit: false,
-                  food: false,
+                  food: true,
                   notEating: false
                 },
                 lunch: {
@@ -125,7 +125,7 @@ Accounts.onCreateUser(function(options, user) {
                   mealType: 'lunch',
                   time: '15:00',
                   fruit: false,
-                  food: false,
+                  food: true,
                   notEating: false
                 },
                 dinner: {
@@ -133,7 +133,7 @@ Accounts.onCreateUser(function(options, user) {
                   mealType: 'dinner',
                   time: '19:00',
                   fruit: false,
-                  food: false,
+                  food: true,
                   notEating: false
                 }},
                 { weekday: 'Saturday',
@@ -142,7 +142,7 @@ Accounts.onCreateUser(function(options, user) {
                     mealType: 'breakfast',
                     time: '10:00',
                     fruit: false,
-                    food: false,
+                    food: true,
                     notEating: false
                   },
                   lunch: {
@@ -150,7 +150,7 @@ Accounts.onCreateUser(function(options, user) {
                     mealType: 'lunch',
                     time: '15:00',
                     fruit: false,
-                    food: false,
+                    food: true,
                     notEating: false
                   },
                   dinner: {
@@ -158,7 +158,7 @@ Accounts.onCreateUser(function(options, user) {
                     mealType: 'dinner',
                     time: '19:00',
                     fruit: false,
-                    food: false,
+                    food: true,
                     notEating: false
                   }},
                   { weekday: 'Sunday',
@@ -167,7 +167,7 @@ Accounts.onCreateUser(function(options, user) {
                       mealType: 'breakfast',
                       time: '10:00',
                       fruit: false,
-                      food: false,
+                      food: true,
                       notEating: false
                     },
                     lunch: {
@@ -175,7 +175,7 @@ Accounts.onCreateUser(function(options, user) {
                       mealType: 'lunch',
                       time: '15:00',
                       fruit: false,
-                      food: false,
+                      food: true,
                       notEating: false
                     },
                     dinner: {
@@ -183,7 +183,7 @@ Accounts.onCreateUser(function(options, user) {
                       mealType: 'dinner',
                       time: '19:00',
                       fruit: false,
-                      food: false,
+                      food: true,
                       notEating: false
                     }}];
   return user;

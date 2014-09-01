@@ -3,7 +3,7 @@ Template.cards.helpers({
     return moment(Session.get('activeDay'), 'YYYY-MM-DD').format('dddd, MMMM Do')
   },
   dayCards: function () {
-    return Meals.find({day: Session.get('activeDay')})
+    return Meals.find({day: Session.get('activeDay')}, {sort: {sort: 1}})
   }
 });
 

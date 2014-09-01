@@ -40,13 +40,17 @@ Meteor.methods({
       break;
     }
 
-    var users = Meteor.users.find({chef: {$ne: true}});
-
-
+    var users = Meteor.users.find({eating: true});
 
     users.forEach(function (user) {
-      if (user && user.profile.days) {
-
+      if (user && user.profile.days[dayHelper][meal.mealType].food) {
+        Attending.update({mealId: mealId, owner: user._id}, { $addToSet: {myMeals: {dish: dishId, eating: true}}
+        }, function (err, res) {
+          if (err)
+            console.log('%c err   ',  'background: #B3CC57; color: white; padding: 1px 15px 1px 5px;', err);
+          else
+            console.log('%c res   ',  'background: #B3CC57; color: white; padding: 1px 15px 1px 5px;', res);
+        })
       }
     })
   }

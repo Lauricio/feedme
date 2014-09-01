@@ -17,7 +17,30 @@ if (Meteor.users.find().count() == 0) {
       mealType: 'breakfast',
       owner: 'notSet',
       dishes: [{dish: 'Dish0001', dishOptions: []}, 
-      {dish: 'Dish0002', dishOptions: ['chicken']}]
+      {dish: 'Dish0002', dishOptions: ['chicken']}],
+      sort: 1
+    });
+
+   Meals.insert({
+      _id: "Meal0002",
+      day: todayFormated,
+      time: '15:00',
+      mealType: 'lunch',
+      owner: 'notSet',
+      dishes: [{dish: 'Dish0001', dishOptions: []}, 
+      {dish: 'Dish0002', dishOptions: ['chicken']}],
+      sort: 2
+    });
+
+   Meals.insert({
+      _id: "Meal0003",
+      day: todayFormated,
+      time: '19:00',
+      mealType: 'dinner',
+      owner: 'notSet',
+      dishes: [{dish: 'Dish0001', dishOptions: []}, 
+      {dish: 'Dish0002', dishOptions: ['chicken']}],
+      sort: 3
     })
 
   var users = [
@@ -39,13 +62,13 @@ if (Meteor.users.find().count() == 0) {
       Roles.addUsersToRoles(id, user.roles);
     }
 
-    Attending.insert({
-      day: moment(new Date()).format('YYYY-MM-DD'),
-      owner: id,
-      mealId: 'Meal0001',
-      myMeals: [{dish: 'Dish0001', eating: true}, {dish: 'Dish0002', eating: true}],
-      disabled: false
-    })
+    // Attending.insert({
+    //   day: moment(new Date()).format('YYYY-MM-DD'),
+    //   owner: id,
+    //   mealId: 'Meal0001',
+    //   myMeals: [{dish: 'Dish0001', eating: true}, {dish: 'Dish0002', eating: true}],
+    //   disabled: false
+    // })
 
   });
 
