@@ -61,7 +61,7 @@ Accounts.onCreateUser(function(options, user) {
             food: true,
             notEating: false
           }},
-          { weekday: 'Wenesday',
+          { weekday: 'Wednesday',
             breakfast: {
               day: '2',
               mealType: 'breakfast',

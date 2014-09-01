@@ -1,6 +1,7 @@
 function UpdateAttending (dayHelper, day, mealId, mealType) {
   var users = Meteor.users.find({eating: true});
   users.forEach(function (user) {
+
     if (user && !user.profile.days[dayHelper][mealType].notEating) {
       if (user.profile.days[dayHelper][mealType].food) {
         Attending.insert({
@@ -43,7 +44,7 @@ Meteor.autorun(function () {
         case 'tuesday':
           dayHelper = 1;
         break;
-        case 'wenesday':
+        case 'wednesday':
           dayHelper = 2;
         break;
         case 'thursday':
@@ -116,7 +117,7 @@ Meteor.methods({
         })
 
         var day = moment(nextWeek, 'YYYY-MM-DD').format('dddd').toLowerCase();
-        var dayHelper = 0;
+        var dayHelper = 20;
         switch (day) {
           case 'monday':
             dayHelper = 0;
@@ -124,7 +125,7 @@ Meteor.methods({
           case 'tuesday':
             dayHelper = 1;
           break;
-          case 'wenesday':
+          case 'wednesday':
             dayHelper = 2;
           break;
           case 'thursday':
