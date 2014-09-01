@@ -9,11 +9,13 @@
         <h4 class="title top">{{englishName}}</h4>
         <h4 class="title">{{thaiName}}</h4>
       </div>
+      {{#if mealOptions}}
       <div class="labels">
         {{#each mealOptions}}
         <div class="ing-label icn-{{this}} bgColor-{{../../mealType}}"></div>
         {{/each}}
       </div>
+      {{/if}}
     </div>
     <button class="remove-control icn-minus js-removeDishFromMeal bgColor-{{../../mealType}}"></button>
   </div>
