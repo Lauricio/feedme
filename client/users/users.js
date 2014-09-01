@@ -5,6 +5,9 @@
 // });
 
 Template.userItem.helpers({
+  user: function () {
+    return Meteor.users.findOne({_id: this.owner})
+  },
  dishPicture: function () {
   var picture = Dishes.findOne({_id: this.dish});
   return picture && picture.picture ? picture.picture : ''
