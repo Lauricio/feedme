@@ -23,7 +23,7 @@ Meteor.methods({
       case 'tuesday':
         dayHelper = 1;
       break;
-      case 'wenesday':
+      case 'wednesday':
         dayHelper = 2;
       break;
       case 'thursday':
@@ -52,8 +52,8 @@ Meteor.methods({
           else
             console.log('%c res   ',  'background: #B3CC57; color: white; padding: 1px 15px 1px 5px;', res);
         })
-      } else if (user && user.profile.days[dayHelper][meal.mealType].fruit) {
-          Attending.update({mealId: mealId, owner: user._id}, { $addToSet: {myMeals: {dish: 'FruitMeal0000001', eating: true}}
+      }  else if (user && user.profile.days[dayHelper][meal.mealType].fruit) {
+          Attending.update({mealId: mealId, owner: user._id}, { $addToSet: {myMeals: {dish: dishId, eating: false}}
           }, function (err, res) {
             if (err)
               console.log('%c err   ',  'background: #B3CC57; color: white; padding: 1px 15px 1px 5px;', err);
