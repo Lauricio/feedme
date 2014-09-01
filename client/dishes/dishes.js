@@ -11,8 +11,9 @@ Template.dishItem.helpers({
 Template.dishItem.events({
   'click .js-openGrid': function (e) {
       if (Session.equals('gridOpen', false)) {
-    console.log(this)
-        Session.set('activeDish', this._id)
+        console.log(UI._parentData(1))
+        Session.set('activeDishId', this._id)
+        Session.set('activeMealId', UI._parentData(1)._id)
       }
       Session.toggle('gridOpen');
   },
@@ -31,20 +32,20 @@ Template.dishItem.events({
   }
 });
 
+Session.setDefault('gridOpen', false)
 Template.ingredients.helpers({
   openState: function () {
     return Session.equals('gridOpen', true) ? 'is-open' : '';
   }
 })
 
-Session.setDefault('gridOpen', false)
 
 Template.ingredients.events({
   'click .js-selectIngredientFish' : function (e, t) {
     Session.toggle('gridOpen');
     var self = this;
-    var meal = UI._parentData(1);
-    var index = _.indexOf(_.pluck(meal.dishes, 'dish'), Session.get('activeDish'));
+    var meal = Meals.findOne({_id: Session.get('activeMealId')})
+    var index = _.indexOf(_.pluck(meal.dishes, 'dish'), Session.get('activeDishId'));
     var modifier = {$addToSet: {}};
     modifier.$addToSet["dishes." + index + ".dishOptions"] = 'fish';
     Meals.update({_id: meal._id}, modifier);
@@ -52,8 +53,8 @@ Template.ingredients.events({
   'click .js-selectIngredientPork' : function (e, t) {
     Session.toggle('gridOpen');
     var self = this;
-    var meal = UI._parentData(1);
-    var index = _.indexOf(_.pluck(meal.dishes, 'dish'), Session.get('activeDish'));
+    var meal = Meals.findOne({_id: Session.get('activeMealId')})
+    var index = _.indexOf(_.pluck(meal.dishes, 'dish'), Session.get('activeDishId'));
     var modifier = {$addToSet: {}};
     modifier.$addToSet["dishes." + index + ".dishOptions"] = 'pork';
     Meals.update({_id: meal._id}, modifier);
@@ -61,8 +62,8 @@ Template.ingredients.events({
   'click .js-selectIngredientSeafood' : function (e, t) {
     Session.toggle('gridOpen');
     var self = this;
-    var meal = UI._parentData(1);
-    var index = _.indexOf(_.pluck(meal.dishes, 'dish'), Session.get('activeDish'));
+    var meal = Meals.findOne({_id: Session.get('activeMealId')})
+    var index = _.indexOf(_.pluck(meal.dishes, 'dish'), Session.get('activeDishId'));
     var modifier = {$addToSet: {}};
     modifier.$addToSet["dishes." + index + ".dishOptions"] = 'seafood';
     Meals.update({_id: meal._id}, modifier);
@@ -70,8 +71,8 @@ Template.ingredients.events({
   'click .js-selectIngredientShrimp' : function (e, t) {
     Session.toggle('gridOpen');
     var self = this;
-    var meal = UI._parentData(1);
-    var index = _.indexOf(_.pluck(meal.dishes, 'dish'), Session.get('activeDish'));
+    var meal = Meals.findOne({_id: Session.get('activeMealId')})
+    var index = _.indexOf(_.pluck(meal.dishes, 'dish'), Session.get('activeDishId'));
     var modifier = {$addToSet: {}};
     modifier.$addToSet["dishes." + index + ".dishOptions"] = 'shrimp';
     Meals.update({_id: meal._id}, modifier);
@@ -79,8 +80,8 @@ Template.ingredients.events({
   'click .js-selectIngredientChicken' : function (e, t) {
     Session.toggle('gridOpen');
     var self = this;
-    var meal = UI._parentData(1);
-    var index = _.indexOf(_.pluck(meal.dishes, 'dish'), Session.get('activeDish'));
+    var meal = Meals.findOne({_id: Session.get('activeMealId')})
+    var index = _.indexOf(_.pluck(meal.dishes, 'dish'), Session.get('activeDishId'));
     var modifier = {$addToSet: {}};
     modifier.$addToSet["dishes." + index + ".dishOptions"] = 'chicken';
     Meals.update({_id: meal._id}, modifier);
