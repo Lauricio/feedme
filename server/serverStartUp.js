@@ -1,9 +1,9 @@
 Meteor.startup(function () {
-  // Days.remove({})
-  // Meteor.users.remove({})
-  // Dishes.remove({})
-  // Attending.remove({})
-  // Meals.remove({});
+  Days.remove({})
+  Meteor.users.remove({})
+  Dishes.remove({})
+  Attending.remove({})
+  Meals.remove({});
 if (Meteor.users.find().count() == 0) {
 
   var today = new Date();
