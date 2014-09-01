@@ -16,6 +16,10 @@ Template.cards.events({
   }
 })
 
+
+Template.cards.rendered = function () {
+  $('#selectDate').pickadate();
+};
 Template.cardsList.helpers({
   whoIsEating: function () {
     return Attending.find({mealId: this._id, disabled: false, owner: {$ne: Meteor.userId()}})
