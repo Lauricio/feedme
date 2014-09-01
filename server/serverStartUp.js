@@ -98,7 +98,14 @@ if (Meteor.users.find().count() == 0) {
       offeredBy: []
     });
 
-
+    Dishes.insert({
+      _id: 'FruitMeal0000001',
+      thaiName:'ผลไม้',
+      englishName: 'Fruits',
+      picture: 'http://www.d-thaifruit.com/images/fruit-tray.jpg',
+      timesOrdered: 0,
+      offeredBy: []
+    });
 
 
   }

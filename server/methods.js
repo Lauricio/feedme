@@ -44,6 +44,7 @@ Meteor.methods({
 
     users.forEach(function (user) {
       if (user && user.profile.days[dayHelper][meal.mealType].food) {
+
         Attending.update({mealId: mealId, owner: user._id}, { $addToSet: {myMeals: {dish: dishId, eating: true}}
         }, function (err, res) {
           if (err)
@@ -51,6 +52,14 @@ Meteor.methods({
           else
             console.log('%c res   ',  'background: #B3CC57; color: white; padding: 1px 15px 1px 5px;', res);
         })
+      } else if (user && user.profile.days[dayHelper][meal.mealType].fruit) {
+          Attending.update({mealId: mealId, owner: user._id}, { $addToSet: {myMeals: {dish: 'FruitMeal0000001', eating: true}}
+          }, function (err, res) {
+            if (err)
+              console.log('%c err   ',  'background: #B3CC57; color: white; padding: 1px 15px 1px 5px;', err);
+            else
+              console.log('%c res   ',  'background: #B3CC57; color: white; padding: 1px 15px 1px 5px;', res);
+          })
       }
     })
   }

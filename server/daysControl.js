@@ -1,14 +1,25 @@
-function UpdateAttending (dayHelper, day, mealId) {
+function UpdateAttending (dayHelper, day, mealId, mealType) {
   var users = Meteor.users.find({eating: true});
   users.forEach(function (user) {
-    if (user && !user.profile.days[dayHelper]['breakfast'].notEating) {
-      Attending.insert({
-        day: day,
-        owner: user._id,
-        mealId: mealId,
-        myMeals: [],
-        disabled: false
-      })
+    if (user && !user.profile.days[dayHelper][mealType].notEating) {
+      if (user.profile.days[dayHelper][mealType].food) {
+        Attending.insert({
+          day: day,
+          owner: user._id,
+          mealId: mealId,
+          myMeals: [],
+          disabled: false
+        })
+      } else if (user.profile.days[dayHelper][mealType].fruit) {
+        Attending.insert({
+          day: day,
+          owner: user._id,
+          mealId: mealId,
+          myMeals: [{dish: 'FruitMeal0000001', dishOptions: [], eating: true}],
+          disabled: false
+        })
+      }
+      
     }
   })
 }
@@ -59,7 +70,7 @@ Meteor.autorun(function () {
         sort: 1
       }, function (err, mealId) {
         if (!err && mealId) {
-          UpdateAttending( dayHelper, nextWeek, mealId)
+          UpdateAttending( dayHelper, nextWeek, mealId, 'breakfast')
         }
       });
 
@@ -72,7 +83,7 @@ Meteor.autorun(function () {
         sort: 2
       }, function (err, mealId) {
         if (!err && mealId) {
-          UpdateAttending( dayHelper, nextWeek, mealId)
+          UpdateAttending( dayHelper, nextWeek, mealId, 'lunch')
         }
       });
 
@@ -85,7 +96,7 @@ Meteor.autorun(function () {
         sort: 3
       }, function (err, mealId) {
         if (!err && mealId) {
-          UpdateAttending( dayHelper, nextWeek, mealId)
+          UpdateAttending( dayHelper, nextWeek, mealId, 'dinner')
         }
       });      
 
@@ -140,7 +151,7 @@ Meteor.methods({
           sort: 1
         }, function (err, mealId) {
           if (!err && mealId) {
-            UpdateAttending( dayHelper, nextWeek, mealId)
+            UpdateAttending( dayHelper, nextWeek, mealId, 'breakfast')
           }
         });
 
@@ -153,7 +164,7 @@ Meteor.methods({
           sort: 2
         }, function (err, mealId) {
           if (!err && mealId) {
-            UpdateAttending( dayHelper, nextWeek, mealId)
+            UpdateAttending( dayHelper, nextWeek, mealId, 'lunch')
           }
         });
 
@@ -166,7 +177,7 @@ Meteor.methods({
           sort: 3
         }, function (err, mealId) {
           if (!err && mealId) {
-            UpdateAttending( dayHelper, nextWeek, mealId)
+            UpdateAttending( dayHelper, nextWeek, mealId, 'dinner')
           }
         });      
 
