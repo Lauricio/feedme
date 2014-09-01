@@ -91,10 +91,12 @@ Template.selectDish.events({
 Template.dishesForAddingToMeal.helpers({
   alreadyAddedInMeal: function () {
     var self = this;
+    var index = 0;
     var meal = Meals.findOne({_id: Session.get('activeMeal')})
-    var index = _.indexOf(_.pluck(meal.dishes, 'dish'), self._id);
-    return index < 0 ? false : true
-  }
+    if (meal)
+      index = _.indexOf(_.pluck(meal.dishes, 'dish'), self._id); 
+    return index < 0 ? false : true;
+  }  
 })
 
 Template.dishesForAddingToMeal.events({
