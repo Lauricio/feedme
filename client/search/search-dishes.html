@@ -1,4 +1,6 @@
 <template name='searchDishesByName'>
-  <input type="text" class="search form-control" placeholder="Search by english or thai name" id="searchForDishes">
-  <button class="filterControl-btnClear  js-clearSearch  {{#if searchFilter}}  is-enabled filterControl-btnClear {{/if}}" type="button"><span class="sparkicon sparkicon-close"></span></button>
+  <div class="search-module">
+    <input type="text" class="search-input form-control" placeholder="Search by english or thai name" id="searchForDishes">
+    <button class="clear-control js-clearSearch icn-close {{#if searchFilter}}  is-enabled  {{/if}}"></button>
+  </div>
 </template>

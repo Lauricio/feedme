@@ -30,7 +30,7 @@
   background-color: rgba(red(@menu), green(@menu), blue(@menu), .95);
   color: @light-heading;
   // background-color: @background;
-  margin: 0 3rem;
+  margin: 0 2rem;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -78,11 +78,12 @@
   top: 10%;
   left: 0;
   right: 0;
+  bottom: 1em;
   z-index: @level-1;
   background-color: rgba(red(@menu), green(@menu), blue(@menu), .95);
   color: @light-heading;
   // background-color: @background;
-  margin: 0 3rem;
+  margin: 0 1rem;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -110,6 +111,11 @@
     height: 100%;
     border-radius: 10px;
     margin-top: 1em;
+  }
+
+  .search-controls {
+    margin-bottom: 1em;
+    width: 100%;
   }
 }
 

@@ -42,12 +42,19 @@
 </template>
 
 <template name="selectDish">
-<div class="select-dish-modal no-drag {{openState}}">
+<div class="select-dish-modal {{openState}}">
    <button class="close-modal icn-close js-closeSelectDish"></button>
-   {{> searchDishesByName}}
-   {{#each dishesToSelect}}
-      {{> dishesForAddingToMeal}}
-   {{/each}}
+   <div class="search-controls">
+     {{> searchDishesByName}}
+   </div>
+
+   <div class="native-scroller {{#unless touchEnabled}} is-enabled {{/unless}} has-search-modal">
+    <div class="scrollerWrapper js-scrollerWatcher">
+       {{#each dishesToSelect}}
+          {{> dishesForAddingToMeal}}
+       {{/each}}
+     </div>
+     </div>
 </div>
 <div class="select-dish-modal-overlay no-drag"></div>
 </template>
