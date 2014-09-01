@@ -1,24 +1,21 @@
-<template name="dishes">
-  {{> dishItem}}
-</template>
 
 <template name="dishItem">
   {{#with dish}}
-  <div class="dish-item">
+  <div class="dish-item {{../../mealType}}">
     <img class="illustration" src="{{picture}}" alt="">
-      <button class="ing-control icn-grid js-openGrid"></button>
-    <div class="meta js-clearIngredients">
+      <button class="ing-control icn-grid js-openGrid bgColor-{{../../mealType}}"></button>
+    <div class="meta js-clearIngredients bgColor-{{../../mealType}}">
       <div class="info">
         <h4 class="title top">{{englishName}}</h4>
         <h4 class="title">{{thaiName}}</h4>
       </div>
       <div class="labels">
         {{#each mealOptions}}
-        <div class="ing-label icn-{{this}}"></div>
+        <div class="ing-label icn-{{this}} bgColor-{{../../mealType}}"></div>
         {{/each}}
       </div>
     </div>
-    <button class="remove-control icn-minus js-removeDishFromMeal"></button>
+    <button class="remove-control icn-minus js-removeDishFromMeal bgColor-{{../../mealType}}"></button>
   </div>
   {{/with}}
 </template>
