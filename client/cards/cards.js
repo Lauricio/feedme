@@ -17,31 +17,31 @@ Template.cards.events({
 })
 picker = {};
 
-Template.cards.rendered = function () {
-   var $input = $('#selectDate').pickadate()
+// Template.cards.rendered = function () {
+//    var $input = $('#selectDate').pickadate()
 
-   // Use the picker object directly.
-   picker = $input.pickadate('picker')
-  console.log('%c picker   ',  'background: #B3CC57; color: white; padding: 1px 15px 1px 5px;', picker);
-  picker.on({
-    open: function() {
-        console.log('Opened up!')
-    },
-    close: function() {
-        console.log('Closed now')
-    },
-    render: function() {
-        console.log('Just rendered anew')
-    },
-    stop: function() {
-        console.log('See ya')
-    },
-    set: function(thingSet) {
-        console.log('Set stuff:', thingSet)
-    }
-  })
+//    // Use the picker object directly.
+//    picker = $input.pickadate('picker')
+//   console.log('%c picker   ',  'background: #B3CC57; color: white; padding: 1px 15px 1px 5px;', picker);
+//   picker.on({
+//     open: function() {
+//         console.log('Opened up!')
+//     },
+//     close: function() {
+//         console.log('Closed now')
+//     },
+//     render: function() {
+//         console.log('Just rendered anew')
+//     },
+//     stop: function() {
+//         console.log('See ya')
+//     },
+//     set: function(thingSet) {
+//         console.log('Set stuff:', thingSet)
+//     }
+//   })
 
-};
+// };
 Template.cardsList.helpers({
   whoIsEating: function () {
     return Attending.find({mealId: this._id, disabled: false, owner: {$ne: Meteor.userId()}})
