@@ -1,6 +1,7 @@
 Template.CMSdishes.helpers({
   dishes: function () {
-    return Dishes.find({}, {sort: {createdAt: -1}})
+    // return Dishes.find({}, {sort: {createdAt: -1}})
+     return Session.get('keywords') ? Dishes.searchByName(Session.get('keywords')): Dishes.find({}, {sort: {createdAt: -1}});
   }
 });
 

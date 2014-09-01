@@ -1,7 +1,7 @@
 <template name="CMSdishes">
   <div class="dish-controls">
     <button class="control icn-plus js-addNewDish"></button>
-    <input type="text" class="search form-control" placeholder="search">
+    {{> searchDishesByName}}
   </div>
   <div class="cms-dish-list">
     {{#each dishes}}
