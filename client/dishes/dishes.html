@@ -8,7 +8,7 @@
   <div class="dish-item">
     <img class="illustration" src="{{picture}}" alt="">
       <button class="ing-control icn-grid js-openGrid"></button>
-    <div class="meta">
+    <div class="meta js-clearIngredients">
       <div class="info">
         <h4 class="title top">{{englishName}}</h4>
         <h4 class="title">{{thaiName}}</h4>
@@ -42,7 +42,7 @@
 </template>
 
 <template name="ingredients">
-  <div class="ingredients-overlay no-drag {{openState}}">
+  <div class="ingredients-modal no-drag {{openState}}">
     <button class="add-control icn-chicken js-selectIngredientChicken"></button>
     <button class="add-control icn-pork js-selectIngredientPork"></button>
     <button class="add-control icn-seafood js-selectIngredientSeafood"></button>
@@ -52,4 +52,5 @@
 
     <button class="close-modal icn-close js-closeModal"></button>
   </div>
+  <div class="ingredients-modal-overlay no-drag"></div>
 </template>

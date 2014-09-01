@@ -41,19 +41,20 @@
 </template>
 
 <template name="selectDish">
-<div class="add-dish-modal no-drag {{openState}}">
-   <button class=" js-closeSelectDish">close</button>
+<div class="select-dish-modal no-drag {{openState}}">
+   <button class="close-modal icn-close js-closeSelectDish"></button>
    {{#each dishesToSelect}}
       {{> dishesForAddingToMeal}}
    {{/each}}
 </div>
-  
+<div class="select-dish-modal-overlay no-drag"></div>
 </template>
 
 <template name="dishesForAddingToMeal">
   <div class="dish-item">
     <img class="illustration" src="{{picture}}" alt="">
-      <button class="ing-control icn-pencil js-addToMeal"></button>
+      <button class="ing-control icn-plus js-addToMeal"></button>
+      <!-- <button class="ing-control icn-checkmark js-addToMeal"></button> -->
     <div class="meta">
       <div class="info">
         <h4 class="title top">{{englishName}}</h4>

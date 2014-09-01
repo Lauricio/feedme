@@ -84,5 +84,8 @@ Template.ingredients.events({
     var modifier = {$addToSet: {}};
     modifier.$addToSet["dishes." + index + ".dishOptions"] = 'chicken';
     Meals.update({_id: meal._id}, modifier);
+  },
+  'click .js-closeModal' : function (e, t) {
+    Session.set('gridOpen', false);
   }
 });

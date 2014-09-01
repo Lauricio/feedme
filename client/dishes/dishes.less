@@ -8,6 +8,7 @@
   // background: url(http://imgur.com/WDgcp6h.jpg) no-repeat top left;
   // background-size: 100%;
   position: relative;
+  min-height: 150px;
 
   .illustration {
     width: 100%;
@@ -23,9 +24,9 @@
     color: white;
     // padding: 1rem 1.3rem;
     font-size: 2.2em;
-    padding: 0 .2em;
+    padding: .2em;
 
-    &.icn-pencil {
+    &.icn-pencil, &.icn-checkmark, &.icn-plus {
       font-size: 1.5em;
       padding: .4em;
     }
@@ -85,11 +86,12 @@
   }
 }
 
-.ingredients-overlay {
+.ingredients-modal {
   position: absolute;
   top: 20%;
   left: 0;
   right: 0;
+  z-index: @level-1;
   background-color: rgba(red(@menu), green(@menu), blue(@menu), .95);
   // background-color: @background;
   margin: 0 3rem;
@@ -128,5 +130,14 @@
 
   }
 
+}
 
+.ingredients-modal-overlay {
+  &:extend(.overlay-base);
+  z-index: @level-1 - 10;
+}
+
+.is-open + .ingredients-modal-overlay {
+  opacity: 1;
+  visibility: visible;
 }
