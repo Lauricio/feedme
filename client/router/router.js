@@ -1,3 +1,6 @@
+PaginationHandles = {};
+PaginationHandles.dishes = new PaginatedQuery({ }, 20, 'Dishes', {createdAt: 1});
+
 Router.map( function () {
 
   this.route('login', { 
