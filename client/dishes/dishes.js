@@ -26,7 +26,6 @@ Template.dishItem.events({
   },
   'click .js-openGrid': function (e) {
       if (Session.equals('gridOpen', false)) {
-        console.log(UI._parentData(1))
         Session.set('activeDishId', this._id)
         Session.set('activeMealId', UI._parentData(1)._id)
       }
