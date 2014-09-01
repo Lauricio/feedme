@@ -15,10 +15,32 @@ Template.cards.events({
     Session.set('activeDay', moment(Session.get('activeDay'), 'YYYY-MM-DD').add(1, 'd').format('YYYY-MM-DD'))
   }
 })
-
+picker = {};
 
 Template.cards.rendered = function () {
-  $('#selectDate').pickadate();
+   var $input = $('#selectDate').pickadate()
+
+   // Use the picker object directly.
+   picker = $input.pickadate('picker')
+  console.log('%c picker   ',  'background: #B3CC57; color: white; padding: 1px 15px 1px 5px;', picker);
+  picker.on({
+    open: function() {
+        console.log('Opened up!')
+    },
+    close: function() {
+        console.log('Closed now')
+    },
+    render: function() {
+        console.log('Just rendered anew')
+    },
+    stop: function() {
+        console.log('See ya')
+    },
+    set: function(thingSet) {
+        console.log('Set stuff:', thingSet)
+    }
+  })
+
 };
 Template.cardsList.helpers({
   whoIsEating: function () {
