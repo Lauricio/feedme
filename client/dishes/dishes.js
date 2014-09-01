@@ -9,6 +9,21 @@ Template.dishItem.helpers({
 });
 
 Template.dishItem.events({
+  'click .js-clearIngredients': function () {
+    if (confirm('Would you like to remove all ingredients from this dish?')) {
+      var self = this;
+
+      var meal = UI._parentData(1);
+
+      var index = _.indexOf(_.pluck(meal.dishes, 'dish'), Session.get('activeDishId'));
+      var modifier = {$set: {}};
+
+      modifier.$set["dishes." + index ] = {dish: self._id, dishOptions: []};
+
+      Meals.update({_id: meal._id}, modifier);
+
+    }
+  },
   'click .js-openGrid': function (e) {
       if (Session.equals('gridOpen', false)) {
         console.log(UI._parentData(1))
@@ -84,6 +99,15 @@ Template.ingredients.events({
     var index = _.indexOf(_.pluck(meal.dishes, 'dish'), Session.get('activeDishId'));
     var modifier = {$addToSet: {}};
     modifier.$addToSet["dishes." + index + ".dishOptions"] = 'chicken';
+    Meals.update({_id: meal._id}, modifier);
+  },
+  'click .js-selectIngredientMushroom' : function (e, t) {
+    Session.toggle('gridOpen');
+    var self = this;
+    var meal = Meals.findOne({_id: Session.get('activeMealId')})
+    var index = _.indexOf(_.pluck(meal.dishes, 'dish'), Session.get('activeDishId'));
+    var modifier = {$addToSet: {}};
+    modifier.$addToSet["dishes." + index + ".dishOptions"] = 'mushroom';
     Meals.update({_id: meal._id}, modifier);
   },
   'click .js-closeModal' : function (e, t) {
