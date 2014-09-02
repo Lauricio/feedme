@@ -1,4 +1,47 @@
 Meteor.startup(function () {
+if (Meteor.users.find().count() == 0) {
+
+  var today = new Date();
+  var todayFormated = moment(today).format('YYYY-MM-DD');
+  Days.insert({
+    date: today,
+    day: todayFormated
+  });
+
+  var users = [
+      {name:"Sa",email:"chef@tapfuse.io",roles:['cook']},
+    ];
+
+  _.each(users, function (user) {
+    var id;
+
+    id = Accounts.createUser({
+      email: user.email,
+      password: "123456",
+      profile: {fullName: user.name}
+    });
+
+    if (user.roles.length > 0) {
+      // Need _id of existing user record so this call must come 
+      // after `Accounts.createUser` or `Accounts.onCreate`
+      Roles.addUsersToRoles(id, user.roles);
+    }
+
+
+      Dishes.insert({
+        _id: 'FruitMeal0000001',
+        thaiName:'ผลไม้',
+        englishName: 'Fruits',
+        picture: 'http://www.d-thaifruit.com/images/fruit-tray.jpg',
+        timesOrdered: 0,
+        offeredBy: []
+      });
+    })
+  }
+
+})
+
+
   // Days.remove({})
   // Meteor.users.remove({})
   // Dishes.remove({})
@@ -90,44 +133,3 @@ Meteor.startup(function () {
 
 
 //   }
-
-if (Meteor.users.find().count() == 0) {
-
-
-  Days.insert({
-    date: today,
-    day: todayFormated
-  });
-
-  var users = [
-      {name:"Sa",email:"chef@tapfuse.io",roles:['cook']},
-    ];
-
-  _.each(users, function (user) {
-    var id;
-
-    id = Accounts.createUser({
-      email: user.email,
-      password: "123456",
-      profile: {fullName: user.name}
-    });
-
-    if (user.roles.length > 0) {
-      // Need _id of existing user record so this call must come 
-      // after `Accounts.createUser` or `Accounts.onCreate`
-      Roles.addUsersToRoles(id, user.roles);
-    }
-
-
-      Dishes.insert({
-        _id: 'FruitMeal0000001',
-        thaiName:'ผลไม้',
-        englishName: 'Fruits',
-        picture: 'http://www.d-thaifruit.com/images/fruit-tray.jpg',
-        timesOrdered: 0,
-        offeredBy: []
-      });
-    })
-  }
-
-})
