@@ -90,7 +90,7 @@ Meteor.autorun(function () {
 
       Meals.insert({
         day: nextWeek,
-        time: '19:00',
+        time: '18:00',
         mealType: 'dinner',
         owner: 'notSet',
         dishes: [],
@@ -171,7 +171,7 @@ Meteor.methods({
 
         Meals.insert({
           day: nextWeek,
-          time: '19:00',
+          time: '18:00',
           mealType: 'dinner',
           owner: 'notSet',
           dishes: [],

@@ -78,7 +78,7 @@ if (Meteor.users.find().count() == 0) {
 //    Meals.insert({
 //       _id: "Meal0003",
 //       day: todayFormated,
-//       time: '19:00',
+//       time: '18:00',
 //       mealType: 'dinner',
 //       owner: 'notSet',
 //       dishes: [{dish: 'Dish0001', dishOptions: []}, 

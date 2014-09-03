@@ -30,7 +30,7 @@ Accounts.onCreateUser(function(options, user) {
           dinner: {
             day: '0',
             mealType: 'dinner',
-            time: '19:00',
+            time: '18:00',
             fruit: false,
             food: true,
             notEating: false
@@ -56,7 +56,7 @@ Accounts.onCreateUser(function(options, user) {
           dinner: {
             day: '1',
             mealType: 'dinner',
-            time: '19:00',
+            time: '18:00',
             fruit: false,
             food: true,
             notEating: false
@@ -81,7 +81,7 @@ Accounts.onCreateUser(function(options, user) {
             dinner: {
               day: '2',
               mealType: 'dinner',
-              time: '19:00',
+              time: '18:00',
               fruit: false,
               food: true,
               notEating: false
@@ -106,7 +106,7 @@ Accounts.onCreateUser(function(options, user) {
               dinner: {
                 day: '3',
                 mealType: 'dinner',
-                time: '19:00',
+                time: '18:00',
                 fruit: false,
                 food: true,
                 notEating: false
@@ -131,7 +131,7 @@ Accounts.onCreateUser(function(options, user) {
                 dinner: {
                   day: '4',
                   mealType: 'dinner',
-                  time: '19:00',
+                  time: '18:00',
                   fruit: false,
                   food: true,
                   notEating: false
@@ -156,7 +156,7 @@ Accounts.onCreateUser(function(options, user) {
                   dinner: {
                     day: '5',
                     mealType: 'dinner',
-                    time: '19:00',
+                    time: '18:00',
                     fruit: false,
                     food: true,
                     notEating: false
@@ -181,7 +181,7 @@ Accounts.onCreateUser(function(options, user) {
                     dinner: {
                       day: '6',
                       mealType: 'dinner',
-                      time: '19:00',
+                      time: '18:00',
                       fruit: false,
                       food: true,
                       notEating: false
