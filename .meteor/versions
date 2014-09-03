@@ -3,6 +3,7 @@ accounts-password@1.0.0
 accounts-ui-unstyled@1.0.0
 accounts-ui@1.0.0
 alanning:roles@1.2.12
+appcache@1.0.0
 application-configuration@1.0.0
 autoupdate@1.0.5
 binary-heap@1.0.0
@@ -39,6 +40,9 @@ mongo-livedata@1.0.3
 npm-bcrypt@0.7.7
 observe-sequence@1.0.1
 ordered-dict@1.0.0
+raix:dictionary@0.0.0
+raix:grounddb@0.1.4
+raix:minimax@0.1.0
 random@1.0.0
 reactive-dict@1.0.0
 reload@1.0.0
